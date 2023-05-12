@@ -15,7 +15,7 @@ function add_server_to_reverse_proxy() {
 
   CONF_PATH=/etc/reverse-proxy/conf.d/"$CONTAINER_NAME/$SERVER_NAME.conf"
 
-  generate_nginx_conf "$CONTAINER_NAME" "$SERVER_NAME" "$URI" "$CONTAINER_IP" > "$CONF_PATH"
+  generate_nginx_conf "$SERVER_NAME" "$URI" "$CONTAINER_IP" "$SERVICE_PORT" > "$CONF_PATH"
 
   docker exec "$CONTAINER_NAME" nginx -s reload
 

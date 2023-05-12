@@ -1,13 +1,11 @@
-http {
-    upstream %NAME% {
-        server %SERVER%;
-    }
+upstream %NAME% {
+    server %SERVER%;
+}
 
-    server {
-        listen 80;
-        server_name %SERVER_NAME%;
-        location %LOCATION% {
-            proxy_pass http://%NAME%;
-        }
+server {
+    listen 80;
+    server_name %SERVER_NAME%;
+    location %LOCATION% {
+        proxy_pass http://%NAME%;
     }
 }
