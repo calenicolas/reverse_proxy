@@ -13,7 +13,7 @@ function create_reverse_proxy() {
   local PUBLIC_PORT="$7"
 
   CONF_PATH=/etc/reverse-proxy/conf.d/"$CONTAINER_NAME"
-  mkdir "$CONF_PATH"
+  mkdir -p "$CONF_PATH"
 
   CONTAINER_IP=$(docker_run_with_volume "$CONTAINER_NAME" "$SERVICE_PORT" "$INTERNAL_NETWORK" "$IMAGE_NAME" "$CONF_PATH" "/etc/nginx/conf.d")
 
