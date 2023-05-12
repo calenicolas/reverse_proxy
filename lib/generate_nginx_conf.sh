@@ -8,5 +8,5 @@ function generate_nginx_conf() {
     local NAME
     NAME=$(date +%s)
 
-    node /usr/local/lib/knock_utils/generate_nginx_conf.js "$NAME" "$SERVER_NAME" "$URI" "$CONTAINER_IP:$CONTAINER_PORT"
+    node /usr/local/lib/reverse_proxy/generate_nginx_conf.js "$NAME" "$SERVER_NAME" "$URI" "$CONTAINER_IP:$CONTAINER_PORT"
 }
