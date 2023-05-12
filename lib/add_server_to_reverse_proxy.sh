@@ -17,7 +17,9 @@ function add_server_to_reverse_proxy() {
 
   generate_nginx_conf "$CONTAINER_NAME" "$SERVER_NAME" "$URI" "$CONTAINER_IP" > "$CONF_PATH"
 
-  docker exec "$CONTAINER_NAME" "nginx -s restart"
+  docker exec "$CONTAINER_NAME" nginx -s reload
+
+  echo "$PROTOCOL" "$PROXY_NETWORK" "$CONTAINER_NETWORK" "$SERVICE_PORT" "$CONTAINER_IP"
 
   allow_internal_forward_to_server "$PROTOCOL" "$PROXY_NETWORK" "$CONTAINER_NETWORK" "$SERVICE_PORT" "$CONTAINER_IP"
 }
