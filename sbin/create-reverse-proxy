@@ -1,5 +1,5 @@
 #!/bin/bash
-. /usr/local/lib/docker_utils/create_reverse_proxy.sh
+. /usr/local/lib/reverse_proxy/create_reverse_proxy.sh
 
 echo "Container name:"
 read -r CONTAINER_NAME
