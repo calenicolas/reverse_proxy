@@ -21,5 +21,5 @@ function add_server_to_reverse_proxy() {
 
   echo "$PROTOCOL" "$PROXY_NETWORK" "$CONTAINER_NETWORK" "$SERVICE_PORT" "$CONTAINER_IP"
 
-  allow_internal_forward_to_server "$PROTOCOL" "$PROXY_NETWORK" "$CONTAINER_NETWORK" "$SERVICE_PORT" "$CONTAINER_IP"
+  allow_internal_forward_to_server "$PROTOCOL" "$PROXY_NETWORK" "$CONTAINER_NETWORK" "$CONTAINER_IP" "$SERVICE_PORT"
 }
